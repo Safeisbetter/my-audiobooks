@@ -12,10 +12,22 @@ function render(filter = "") {
 
   listEl.textContent = "";
   if (!shown.length) {
-    const p = document.createElement("p");
-    p.className = "empty";
-    p.textContent = books.length ? "Nothing matches that search." : "No audiobooks yet. Check back soon.";
-    listEl.appendChild(p);
+    if (books.length) {
+      const p = document.createElement("p");
+      p.className = "empty";
+      p.textContent = "Nothing matches that search.";
+      listEl.appendChild(p);
+      return;
+    }
+    // Empty shelf: three dashed placeholders until the first audiobook is added.
+    for (let i = 0; i < 3; i++) {
+      const slot = document.createElement("div");
+      slot.className = "slot";
+      const t = document.createElement("p");
+      t.textContent = i === 0 ? "Your first audiobook goes here" : "Coming soon";
+      slot.appendChild(t);
+      listEl.appendChild(slot);
+    }
     return;
   }
 
@@ -41,6 +53,22 @@ function render(filter = "") {
       a.className = "author";
       a.textContent = b.author;
       body.appendChild(a);
+    }
+
+    // Optional listening details: narrator, length, and licence.
+    const facts = [];
+    if (b.narrator) facts.push("Narrated by " + b.narrator);
+    if (b.duration) facts.push(b.duration);
+    if (b.license) facts.push(b.license);
+    if (facts.length) {
+      const meta = document.createElement("ul");
+      meta.className = "meta";
+      for (const f of facts) {
+        const li = document.createElement("li");
+        li.textContent = f;
+        meta.appendChild(li);
+      }
+      body.appendChild(meta);
     }
     if (b.description) {
       const d = document.createElement("p");
