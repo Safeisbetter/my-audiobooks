@@ -443,3 +443,35 @@ audio { width: 100%; margin-top: 4px; }
 @media only screen and (min-width: 901px) {
   .split #library .wrap { padding-left: clamp(16px, 5vw, 64px); }
 }
+
+/* Right column: fish picture on top, Khana picture below (desktop) */
+.side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+.side .hero-art {
+  position: relative;
+  top: auto;
+  right: auto;
+  transform: none;
+  width: 100%;
+  max-width: 270px;
+  height: 260px;
+  margin: 0 0 28px;
+  animation: float-side 7s ease-in-out infinite;
+}
+@keyframes float-side {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.2deg); }
+}
+.side #app { padding: 0; }
+.side #app .wrap { padding: 0; max-width: none; margin: 0; }
+@media only screen and (max-width: 900px) {
+  .side { padding-top: 0; align-items: center; }
+  .side .hero-art { margin: 24px auto; max-width: 300px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .side .hero-art { animation: none; }
+}
