@@ -64,7 +64,7 @@ body {
       color-mix(in srgb, var(--paper) 86%, transparent),
       color-mix(in srgb, var(--paper) 94%, transparent)
     ),
-    url("images/background.svg") center / cover fixed no-repeat,
+    url("images/background.jpg") center / cover fixed no-repeat,
     var(--paper);
   color: var(--ink);
   font-family: var(--text);
