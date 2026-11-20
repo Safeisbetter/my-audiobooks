@@ -396,7 +396,7 @@ audio { width: 100%; margin-top: 4px; }
 /* App infographic */
 .app-card {
   margin: 0;
-  max-width: 340px;
+  max-width: 270px;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -406,8 +406,8 @@ audio { width: 100%; margin-top: 4px; }
   display: block;
   width: 100%;
   height: auto;
-  /* soften the navy and purple toward the warm page colours */
-  filter: saturate(0.6) sepia(0.22) hue-rotate(-12deg) brightness(0.95);
+  /* mostly greyscale, with a warm tint, to echo the fish photo */
+  filter: grayscale(0.7) sepia(0.12) contrast(1.05) brightness(0.92);
 }
 
 /* Centre the library block so it balances the fish on the right */
@@ -426,7 +426,7 @@ audio { width: 100%; margin-top: 4px; }
   margin: 0 auto;
   padding: 0 22px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 270px);
   gap: 48px;
   align-items: start;
 }
