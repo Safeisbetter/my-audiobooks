@@ -60,7 +60,11 @@ body {
   display: flex;
   flex-direction: column;
   background:
-    radial-gradient(1200px 500px at 90% -10%, var(--paper-2), transparent 60%),
+    linear-gradient(
+      color-mix(in srgb, var(--paper) 86%, transparent),
+      color-mix(in srgb, var(--paper) 94%, transparent)
+    ),
+    url("images/background.svg") center / cover fixed no-repeat,
     var(--paper);
   color: var(--ink);
   font-family: var(--text);

@@ -14,7 +14,7 @@ function render(filter = "") {
   if (!shown.length) {
     const p = document.createElement("p");
     p.className = "empty";
-    p.textContent = "Nothing matches that search.";
+    p.textContent = books.length ? "Nothing matches that search." : "No audiobooks yet. Check back soon.";
     listEl.appendChild(p);
     return;
   }

@@ -5,88 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; media-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta name="referrer" content="no-referrer">
-  <meta name="description" content="Free public-domain and openly licensed audiobooks. No cookies, no trackers.">
-  <title>Shelf — Audiobooks</title>
+  <meta name="description" content="Free audiobooks. No cookies, no trackers.">
+  <title>Free Audiobooks</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-head">
     <div class="wrap head-row">
-      <a class="logo" href="#top" aria-label="Shelf home">
-        <span class="logo-mark" aria-hidden="true"></span>
-        Shelf
-      </a>
+      <a class="logo" href="#top">Free Audiobooks</a>
       <nav class="menu" aria-label="Main">
         <a href="#library">Library</a>
-        <a href="#listen">Listen</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#add">Add a book</a>
+        <a href="#about">About me</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Free audiobooks · No accounts · No tracking</p>
-          <h1>Your shelf of <em>listenable</em> books.</h1>
-          <p class="lead">Pick a title, press play, or download it for later. Everything here is public domain or openly licensed.</p>
-          <div class="cta-row">
-            <a class="button" href="#library">Browse the library</a>
-            <a class="button ghost" href="#privacy">How privacy works</a>
-          </div>
-        </div>
-        <div class="stack" aria-hidden="true">
-          <span class="spine s1"></span>
-          <span class="spine s2"></span>
-          <span class="spine s3"></span>
-          <span class="spine s4"></span>
-        </div>
+      <div class="wrap">
+        <h1>Free audiobooks</h1>
+        <p class="lead">Press play in your browser, or download a book to keep.</p>
+        <a class="button" href="#library">Go to the library</a>
       </div>
     </section>
 
     <section id="library" class="section">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Library</h2>
-          <p>Search by title or author.</p>
-        </div>
+        <h2>Library</h2>
         <label class="visually-hidden" for="search">Search audiobooks</label>
-        <input type="search" id="search" placeholder="Search the shelf…" autocomplete="off">
+        <input type="search" id="search" placeholder="Search audiobooks" autocomplete="off">
         <div id="list" class="grid"></div>
       </div>
     </section>
 
-    <section id="listen" class="section tint">
-      <div class="wrap steps">
-        <h2>How listening works</h2>
-        <ol>
-          <li><span>1</span> Press play in your browser. Nothing needs installing.</li>
-          <li><span>2</span> Download a book to keep it on your device.</li>
-          <li><span>3</span> Your place isn't saved; the site keeps no record of you.</li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="privacy" class="section">
+    <section id="about" class="section tint">
       <div class="wrap">
-        <h2>Privacy</h2>
-        <p>This site sets no cookies, loads no trackers, and runs no third-party scripts. Its content security policy blocks anything it doesn't need. The hosting provider still handles normal web requests, as any host does.</p>
-      </div>
-    </section>
-
-    <section id="add" class="section tint">
-      <div class="wrap">
-        <h2>Add a book</h2>
-        <p>The owner adds new titles by uploading an MP3 to the <code>audio</code> folder and listing it in <code>books.json</code>. Only public-domain or openly licensed books are published here.</p>
+        <h2>About me</h2>
+        <p>Write a few lines about yourself here.</p>
       </div>
     </section>
   </main>
 
   <footer class="foot">
     <div class="wrap">
-      <p>Shelf · Public-domain and openly licensed audiobooks only.</p>
+      <p>Free audiobooks. Only public-domain or openly licensed titles.</p>
     </div>
   </footer>
 
