@@ -392,3 +392,14 @@ audio { width: 100%; margin-top: 4px; }
   margin-bottom: 12px;
   color: var(--muted);
 }
+
+/* App infographic */
+.app-card {
+  margin: 0 auto;
+  max-width: 560px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 60px -34px rgba(0, 0, 0, 0.8);
+}
+.app-card img { display: block; width: 100%; height: auto; }
