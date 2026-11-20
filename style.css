@@ -140,7 +140,7 @@ h1 em { color: var(--accent); font-style: italic; }
   transform: translateY(-50%);
   width: min(36vw, 400px);
   height: 280px;
-  background: #f2efe9 url("images/background.jpg") center / contain no-repeat;
+  background: #f2efe9 url("images/background.jpg?v=5") center / cover no-repeat;
   border-radius: 16px;
   border: 1px solid var(--line);
   box-shadow: 0 18px 36px -24px rgba(0, 0, 0, 0.5);
