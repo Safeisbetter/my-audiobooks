@@ -14,47 +14,57 @@ function render(filter = "") {
   if (!shown.length) {
     const p = document.createElement("p");
     p.className = "empty";
-    p.textContent = "No audiobooks found.";
+    p.textContent = "Nothing matches that search.";
     listEl.appendChild(p);
     return;
   }
 
-  for (const b of shown) {
+  shown.forEach((b, i) => {
     const card = document.createElement("article");
-    card.className = "book";
+    card.className = "book tone-" + (i % 5);
+
+    const cover = document.createElement("div");
+    cover.className = "cover";
+    cover.setAttribute("aria-hidden", "true");
+    cover.textContent = (b.title || "?").trim().charAt(0).toUpperCase();
+    card.appendChild(cover);
+
+    const body = document.createElement("div");
+    body.className = "info";
 
     const h = document.createElement("h3");
     h.textContent = b.title;
-    card.appendChild(h);
+    body.appendChild(h);
 
     if (b.author) {
       const a = document.createElement("p");
       a.className = "author";
       a.textContent = b.author;
-      card.appendChild(a);
+      body.appendChild(a);
     }
     if (b.description) {
       const d = document.createElement("p");
       d.className = "desc";
       d.textContent = b.description;
-      card.appendChild(d);
+      body.appendChild(d);
     }
 
     const audio = document.createElement("audio");
     audio.controls = true;
     audio.preload = "none";
     audio.src = b.file;
-    card.appendChild(audio);
+    body.appendChild(audio);
 
     const dl = document.createElement("a");
     dl.className = "download";
     dl.href = b.file;
     dl.setAttribute("download", "");
     dl.textContent = "Download";
-    card.appendChild(dl);
+    body.appendChild(dl);
 
+    card.appendChild(body);
     listEl.appendChild(card);
-  }
+  });
 }
 
 searchEl.addEventListener("input", () => render(searchEl.value));

@@ -3,53 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; media-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; media-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta name="referrer" content="no-referrer">
-  <title>My Audiobooks</title>
+  <meta name="description" content="Free public-domain and openly licensed audiobooks. No cookies, no trackers.">
+  <title>Shelf — Audiobooks</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="top">
-    <div class="wrap bar">
-      <a class="brand" href="#">My Audiobooks</a>
-      <nav aria-label="Main">
+  <header class="site-head">
+    <div class="wrap head-row">
+      <a class="logo" href="#top" aria-label="Shelf home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        Shelf
+      </a>
+      <nav class="menu" aria-label="Main">
         <a href="#library">Library</a>
-        <a href="#about">About</a>
-        <a href="#upload">Add books</a>
+        <a href="#listen">Listen</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#add">Add a book</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="wrap">
-      <h1>A private place for your audiobooks.</h1>
-      <p class="lead">Listen in your browser. No accounts, no ads, no tracking.</p>
-      <a class="button" href="#library">Browse the library</a>
-    </div>
-  </section>
-
-  <main class="wrap">
-    <section id="library" class="block">
-      <h2><a href="#library">Library</a></h2>
-      <label class="visually-hidden" for="search">Search audiobooks</label>
-      <input type="search" id="search" placeholder="Search by title or author" autocomplete="off">
-      <div id="list"></div>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Free audiobooks · No accounts · No tracking</p>
+          <h1>Your shelf of <em>listenable</em> books.</h1>
+          <p class="lead">Pick a title, press play, or download it for later. Everything here is public domain or openly licensed.</p>
+          <div class="cta-row">
+            <a class="button" href="#library">Browse the library</a>
+            <a class="button ghost" href="#privacy">How privacy works</a>
+          </div>
+        </div>
+        <div class="stack" aria-hidden="true">
+          <span class="spine s1"></span>
+          <span class="spine s2"></span>
+          <span class="spine s3"></span>
+          <span class="spine s4"></span>
+        </div>
+      </div>
     </section>
 
-    <section id="about" class="block">
-      <h2><a href="#about">About</a></h2>
-      <p>This site offers audiobooks that are in the public domain or shared under an open license. It sets no cookies, loads no trackers, and does not send your listening data anywhere.</p>
+    <section id="library" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Library</h2>
+          <p>Search by title or author.</p>
+        </div>
+        <label class="visually-hidden" for="search">Search audiobooks</label>
+        <input type="search" id="search" placeholder="Search the shelf…" autocomplete="off">
+        <div id="list" class="grid"></div>
+      </div>
     </section>
 
-    <section id="upload" class="block">
-      <h2><a href="#upload">Add books</a></h2>
-      <p>New audiobooks are added by the site owner: place audio files in the <code>audio</code> folder and list them in <code>books.json</code>.</p>
+    <section id="listen" class="section tint">
+      <div class="wrap steps">
+        <h2>How listening works</h2>
+        <ol>
+          <li><span>1</span> Press play in your browser. Nothing needs installing.</li>
+          <li><span>2</span> Download a book to keep it on your device.</li>
+          <li><span>3</span> Your place isn't saved; the site keeps no record of you.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="privacy" class="section">
+      <div class="wrap">
+        <h2>Privacy</h2>
+        <p>This site sets no cookies, loads no trackers, and runs no third-party scripts. Its content security policy blocks anything it doesn't need. The hosting provider still handles normal web requests, as any host does.</p>
+      </div>
+    </section>
+
+    <section id="add" class="section tint">
+      <div class="wrap">
+        <h2>Add a book</h2>
+        <p>The owner adds new titles by uploading an MP3 to the <code>audio</code> folder and listing it in <code>books.json</code>. Only public-domain or openly licensed books are published here.</p>
+      </div>
     </section>
   </main>
 
   <footer class="foot">
     <div class="wrap">
-      <p>Only public-domain or openly licensed audiobooks are published here. No cookies, no trackers.</p>
+      <p>Shelf · Public-domain and openly licensed audiobooks only.</p>
     </div>
   </footer>
 
