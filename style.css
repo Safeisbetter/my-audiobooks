@@ -2,6 +2,7 @@
    System serif for display, system sans for text. */
 :root {
   --paper: #f6f1e7;
+  --smoke: none;
   --paper-2: #efe7d6;
   --ink: #1f1b16;
   --muted: #6b6257;
@@ -21,6 +22,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #171411;
+  --smoke: radial-gradient(60% 50% at 18% 28%, rgba(130, 135, 150, 0.20), transparent 70%), radial-gradient(50% 40% at 82% 18%, rgba(95, 115, 135, 0.16), transparent 70%), radial-gradient(70% 55% at 55% 105%, rgba(10, 10, 12, 0.95), transparent 75%), radial-gradient(40% 35% at 70% 65%, rgba(180, 150, 120, 0.07), transparent 70%);
     --paper-2: #1f1b17;
     --ink: #f3ece0;
     --muted: #b0a593;
@@ -37,6 +39,7 @@
 }
 :root[data-theme="dark"] {
   --paper: #171411;
+  --smoke: radial-gradient(60% 50% at 18% 28%, rgba(130, 135, 150, 0.20), transparent 70%), radial-gradient(50% 40% at 82% 18%, rgba(95, 115, 135, 0.16), transparent 70%), radial-gradient(70% 55% at 55% 105%, rgba(10, 10, 12, 0.95), transparent 75%), radial-gradient(40% 35% at 70% 65%, rgba(180, 150, 120, 0.07), transparent 70%);
   --paper-2: #1f1b17;
   --ink: #f3ece0;
   --muted: #b0a593;
@@ -59,7 +62,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--paper);
+  background: var(--smoke), var(--paper);
   color: var(--ink);
   font-family: var(--text);
   line-height: 1.6;
