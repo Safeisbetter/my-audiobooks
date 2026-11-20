@@ -438,3 +438,8 @@ audio { width: 100%; margin-top: 4px; }
   .split { grid-template-columns: 1fr; gap: 0; }
   .split .app-card { position: static; margin: 0 auto; }
 }
+
+/* Move the Library block a little right on wide screens */
+@media only screen and (min-width: 901px) {
+  .split #library .wrap { padding-left: clamp(16px, 5vw, 64px); }
+}
