@@ -1,0 +1,45 @@
+name: Update audiobook list
+
+# Runs when an audio file is added or changed. It rebuilds books.json from
+# the files in the audio folder, so uploading an MP3 is enough.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "audio/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build books.json from audio files
+        run: |
+          node -e '
+            const fs = require("fs");
+            const files = fs.readdirSync("audio")
+              .filter(f => /\.(mp3|m4a)$/i.test(f))
+              .sort();
+            const books = files.map(f => ({
+              title: f.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").trim(),
+              file: "audio/" + f
+            }));
+            fs.writeFileSync("books.json", JSON.stringify(books, null, 2) + "\n");
+          '
+
+      - name: Commit if the list changed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add books.json
+          if git diff --cached --quiet; then
+            echo "No change to books.json"
+          else
+            git commit -m "Update audiobook list"
+            git push
+          fi
