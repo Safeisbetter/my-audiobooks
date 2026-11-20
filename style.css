@@ -486,4 +486,4 @@ audio { width: 100%; margin-top: 4px; }
 }
 
 /* Keep the audio player a comfortable length inside each book card */
-.book audio { max-width: 360px; }
+.book audio { display: block; max-width: 360px; }
