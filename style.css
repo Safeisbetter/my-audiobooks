@@ -382,3 +382,13 @@ audio { width: 100%; margin-top: 4px; }
   border-radius: 999px;
   padding: 2px 9px;
 }
+
+/* Compact Library heading so it doesn't dominate the page */
+.lib-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
