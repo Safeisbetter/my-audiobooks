@@ -16,7 +16,7 @@
   --tone-3: #8a6a1f;
   --tone-4: #7a3b5c;
   --radius: 16px;
-  --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --display: var(--text);
   --text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
@@ -385,11 +385,11 @@ audio { width: 100%; margin-top: 4px; }
 
 /* Compact Library heading so it doesn't dominate the page */
 .lib-title {
-  font-size: 1.05rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   color: var(--muted);
 }
 
