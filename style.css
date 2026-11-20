@@ -129,30 +129,28 @@ h1 em { color: var(--accent); font-style: italic; }
 .menu a:hover { color: var(--ink); background: var(--card); text-decoration: none; }
 
 /* Hero */
-.hero { padding: 64px 0 56px; position: relative; overflow: hidden; }
+.hero { padding: 64px 0 56px; position: relative; overflow: hidden; min-height: 440px; }
 .hero .wrap { position: relative; z-index: 1; }
 /* Photo fades softly into the page on all sides, on the right of the hero. */
-/* The whole picture sits inside a framed box on the right of the hero. */
+/* The fish sits in an organic, blob-shaped frame on the right of the hero,
+   with a slow float. */
 .hero-art {
   position: absolute;
   top: 50%;
-  right: 5%;
-  transform: translateY(-50%);
-  width: min(44vw, 520px);
-  height: 240px;
-  display: flex;
-  gap: 12px;
-  pointer-events: none;
-}
-.frame {
-  flex: 1;
-  background: #f2efe9 center / cover no-repeat;
-  border-radius: 16px;
+  right: 6%;
+  width: min(34vw, 360px);
+  height: 340px;
+  background: #f2efe9 url("images/fish.jpg?v=7") center / cover no-repeat;
+  border-radius: 48% 52% 46% 54% / 40% 44% 56% 60%;
   border: 1px solid var(--line);
-  box-shadow: 0 18px 36px -24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 24px 50px -28px rgba(0, 0, 0, 0.6), inset 0 0 0 10px rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  animation: float 7s ease-in-out infinite;
 }
-.f-fish { background-image: url("images/fish.jpg?v=6"); background-size: contain; }
-.f-river { background-image: url("images/background.jpg?v=6"); }
+@keyframes float {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  50% { transform: translateY(calc(-50% - 10px)) rotate(1.5deg); }
+}
 @media only screen and (max-width: 760px) {
   .hero-art {
     position: relative;
@@ -160,7 +158,11 @@ h1 em { color: var(--accent); font-style: italic; }
     right: auto;
     transform: none;
     width: 100%;
-    height: 200px;
+    max-width: 320px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: none;
     margin-bottom: 24px;
   }
 }
