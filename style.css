@@ -419,3 +419,22 @@ audio { width: 100%; margin-top: 4px; }
 @media only screen and (max-width: 760px) {
   #library .wrap { max-width: none; }
 }
+
+/* Library and app picture side by side on wide screens; stacked on phones */
+.split {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+  gap: 48px;
+  align-items: start;
+}
+.split > section { padding: 40px 0; }
+.split #library .wrap,
+.split #app .wrap { max-width: none; margin: 0; padding: 0; }
+.split .app-card { position: sticky; top: 96px; }
+@media only screen and (max-width: 900px) {
+  .split { grid-template-columns: 1fr; gap: 0; }
+  .split .app-card { position: static; margin: 0 auto; }
+}
