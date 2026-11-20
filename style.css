@@ -59,13 +59,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background:
-    linear-gradient(
-      color-mix(in srgb, var(--paper) 86%, transparent),
-      color-mix(in srgb, var(--paper) 94%, transparent)
-    ),
-    url("images/background.jpg") center / cover fixed no-repeat,
-    var(--paper);
+  background: var(--paper);
   color: var(--ink);
   font-family: var(--text);
   line-height: 1.6;
@@ -135,7 +129,24 @@ h1 em { color: var(--accent); font-style: italic; }
 .menu a:hover { color: var(--ink); background: var(--card); text-decoration: none; }
 
 /* Hero */
-.hero { padding: 64px 0 56px; }
+.hero { padding: 64px 0 56px; position: relative; overflow: hidden; }
+.hero .wrap { position: relative; z-index: 1; }
+/* Photo fades softly into the page on all sides, on the right of the hero. */
+.hero-art {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(48vw, 560px);
+  height: 100%;
+  background: url("images/background.jpg") center / cover no-repeat;
+  opacity: 0.9;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 45%, transparent 75%);
+  mask-image: radial-gradient(ellipse at center, #000 45%, transparent 75%);
+  pointer-events: none;
+}
+@media only screen and (max-width: 760px) {
+  .hero-art { width: 100%; opacity: 0.35; }
+}
 .hero-grid {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
