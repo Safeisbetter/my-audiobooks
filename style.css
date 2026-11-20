@@ -409,3 +409,13 @@ audio { width: 100%; margin-top: 4px; }
   /* soften the navy and purple toward the warm page colours */
   filter: saturate(0.6) sepia(0.22) hue-rotate(-12deg) brightness(0.95);
 }
+
+/* Centre the library block so it balances the fish on the right */
+#library .wrap {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 760px) {
+  #library .wrap { max-width: none; }
+}
