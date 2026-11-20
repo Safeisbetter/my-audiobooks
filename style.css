@@ -402,4 +402,10 @@ audio { width: 100%; margin-top: 4px; }
   border: 1px solid var(--line);
   box-shadow: 0 30px 60px -34px rgba(0, 0, 0, 0.8);
 }
-.app-card img { display: block; width: 100%; height: auto; }
+.app-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* soften the navy and purple toward the warm page colours */
+  filter: saturate(0.6) sepia(0.22) hue-rotate(-12deg) brightness(0.95);
+}
